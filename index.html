@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name ="viewport" content="width=device-width, initial-scale=1.0" >
+     <title>Real-Time Chat</title>
+     <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <h1>Real-Time Chat</h1>
+  
+    <ul id="messages" >My Text Box</ul>
+  
+    <form id="form" action="">
+      <input id="m" autocomplete="off" /><button id="send">Send</button>
+    </form>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+      const socket = io();
+      const form = document.querySelector('form');
+      const input = document.querySelector('#m');
+      const messages = document.querySelector('#messages');
+  
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit('chat message', input.value);
+          input.value = '';
+        }
+      });
+  
+      socket.on('chat message', (msg) => {
+        const li = document.createElement('li');
+        li.textContent = msg;
+        messages.appendChild(li);
+      });
+  
+      socket.on('connect', () => {
+        console.log('Connected to server');
+      });
+  
+      socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+      });
+    </script>
+  </body>
+  </html>

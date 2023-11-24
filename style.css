@@ -1,0 +1,49 @@
+h1{
+    border-style:solid ;
+    border-color: crimson;
+   border-inline-style: initial;
+    
+color: crimson;
+background-color:cornflowerblue;
+font-size: 50px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-align: center;
+}
+
+#form,#messages{
+    
+    color: beige;
+    margin-left: 100px;
+    background-color:cornflowerblue;
+    size: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#send{
+
+    color: beige;
+    background-color: darkcyan;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body{
+background-color:cornflowerblue;
+
+}
+
+#messages{
+    border-style:solid ;
+    border-color: hotpink;
+   border-inline-style: initial;
+    font-size: 30px;
+    background-color: black;
+    list-style-image: url(flower.jpg);
+    
+}
+
+#m{
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:hotpink;
+}
